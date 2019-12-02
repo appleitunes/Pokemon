@@ -6,8 +6,8 @@ from Game.Data.Pokemon import CreatePokemon
 from Game.Battle.Actions import Attack
 
 
-your_pokemon = CreatePokemon([3, 6, 9], 30, 50)
-opponent_pokemon = CreatePokemon([3, 6, 9], 30, 50)
+your_pokemon = CreatePokemon(range(0, 140), 5, 10)
+opponent_pokemon = CreatePokemon(range(0, 140), 5, 10)
 
 
 def HandleBattle(screen):
@@ -20,7 +20,7 @@ def HandleBattle(screen):
     for event in events:
         if event.type == KEYDOWN:
             if event.key == K_SPACE:
-                Attack(your_pokemon, opponent_pokemon, choice(your_pokemon.moves))
+                Attack(your_pokemon, opponent_pokemon, choice([i for i in your_pokemon.moves if i is not None]))
 
 
 def DrawBackground(screen):
