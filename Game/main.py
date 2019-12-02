@@ -1,5 +1,5 @@
 import pygame
-from Battle.battle import HandleBattle
+from Game.Battle.Battle import HandleBattle
 
 
 pygame.init()
